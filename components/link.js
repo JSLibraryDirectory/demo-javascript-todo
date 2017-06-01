@@ -14,7 +14,7 @@ export default ({ href, children, onClick, inverted = false, margin = 0 }) => (
           display: inline-block;
           cursor: pointer;
           border-radius: 4px;
-          font-size: 1.2rem;
+          font-size: 1.8rem;
           color: white;
           text-decoration: none;
           transition: .5s ease;

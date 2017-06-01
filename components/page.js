@@ -20,7 +20,7 @@ export default ({ children, heading }) => (
       }
 
       aside {
-        flex: 1 0 280px;
+        flex: 1;
         max-width: 400px;
       }
 
