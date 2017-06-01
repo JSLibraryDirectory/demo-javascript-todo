@@ -8,7 +8,7 @@ export default ({ href, children, onClick, inverted = false, margin = 0 }) => (
         {`
         a {
           background: #CF4647;
-          padding: 25px 0;
+          padding: 15px 0;
           text-align: center;
           min-width: 244px;
           display: inline-block;
