@@ -7,22 +7,39 @@ import Select from '../components/select'
 import TagPicker from '../components/tagPicker'
 import Checkbox from '../components/checkbox'
 
+import createTodo from '../lib/create-todo'
+
 export default class extends Component {
   constructor (props) {
     super(props)
     this.state = {
       title: '',
-      description: ''
+      description: '',
+      priority: 'medium',
+      tag: 'home',
+      completed: false,
     }
     this.handleInputChange = this.handleInputChange.bind(this)
+    
   }
 
   handleInputChange ({ target }) {
-    this.setState({ [target.name]: target.value })
+    console.log(target.name, target.value)
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    this.setState({ [target.name]: value })
+  }
+
+  handleCreateClick = async ()  => {
+    try {
+      await createTodo({ ...this.state })
+      console.log('success')
+    } catch (err) {
+      console.log(err)      
+    }
   }
 
   render () {
-    const { title, description } = this.state
+    const { title, description, priority, tag, completed } = this.state
     return (
       <Page heading='Create a task'>
         <div className='wrap'>
@@ -39,21 +56,21 @@ export default class extends Component {
             name='description'
             margin='0 0 40px 0' />
           <div className="column">
-            <Select options={['low', 'medium', 'high']} margin="0 120px 0 0" />
-            <TagPicker />
+            <Select onChange={this.handleInputChange} selected={priority} options={['low', 'medium', 'high']} margin="0 120px 0 0" />
+            <TagPicker onClick={value => this.handleInputChange({ target: { name: 'tag', value } })} selected={tag} />
           </div>
           <div className='bottom'>
             <div className="completed">
               <span>Completed</span>
-              <Checkbox />
+              <Checkbox onChange={this.handleInputChange} checked={completed} />
             </div>
             <div>
             <Link href='/' inverted margin='0 30px 0 0'>
               Cancel
             </Link>
-            <Link href='/'>
+            <button onClick={this.handleCreateClick}>
               Create
-            </Link>
+            </button>
             </div>
           </div>
         </div>
