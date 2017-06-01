@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@rapid-io/client": "https://github.com/Rapid-SDK/javascript.git#dev",
     "next": "latest",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
