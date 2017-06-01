@@ -3,7 +3,11 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prestart": "next build"
+  },
+  "engines": {
+    "node": "8.0.0"
   },
   "dependencies": {
     "@rapid-io/client": "https://github.com/Rapid-SDK/javascript.git#dev",
