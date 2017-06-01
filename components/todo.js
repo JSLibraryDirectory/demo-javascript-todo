@@ -1,6 +1,9 @@
+import Checkbox from './checkbox'
+
 export default ({ title, description, completed }) => (
   <div className="todo">
-    <div>
+    <Checkbox />
+    <div className="text">
       <h2>{title}</h2>
       <p>{description}</p>
     </div>  
@@ -9,6 +12,10 @@ export default ({ title, description, completed }) => (
       .todo {
         padding: 26px 0;
         display: flex;
+        align-items: center;
+      }
+      .text {
+        margin: 0 30px;
       }
     `}
     </style>
