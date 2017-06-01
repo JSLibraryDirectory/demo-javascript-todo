@@ -14,21 +14,39 @@ const Tag = ({ children, selected, margin, onClick }) => (
         background-color: white;
         border: 1px solid #AEA9BF;
         color: #AEA9BF;
+        outline: none;
+        transition: background-color .2s ease, color .2s ease, border .2s ease;
       }
-      button.home {
+      button.home.selected {
         background-color: #3F91EB;
         border: 1px solid #3F91EB;        
         color: white;
       }
-      button.work {
+      button.home:hover {
+        border-color: #3F91EB;
+        color: #3F91EB;
+      }
+      button.work.selected {
         background-color: #CF4647;
         border: 1px solid #CF4647;                
         color: white;
       }
-      button.other {
+      button.work:hover{
+        border-color: #CF4647;
+        color: #CF4647;
+      }
+      button.other.selected {
         background-color: #85D95B;
         border: 1px solid #85D95B;
         color: white;
+      }
+      button.other:hover{
+        border-color: #85D95B;
+        color: #85D95B;
+      }
+      button.selected:hover {
+        color: #fff;
+        cursor: default;
       }
     `}
     </style>
@@ -40,21 +58,21 @@ export default ({ onClick, selected }) => (
     <span>Tags</span>
     <Tag
       onClick={() => onClick('home')}
-      selected={selected === 'home' && 'home'}
+      selected={`home ${selected === 'home' && 'selected'}`}
       margin="0 20px 0 0"
     >
       Home
     </Tag>
     <Tag
       onClick={() => onClick('work')}
-      selected={selected === 'work' && 'work'}
+      selected={`work ${selected === 'work' && 'selected'}`}
       margin="0 20px 0 0"
     >
       Work
     </Tag>
     <Tag
       onClick={() => onClick('other')}
-      selected={selected === 'other' && 'other'}
+      selected={`other ${selected === 'other' && 'selected'}`}
     >
       Other
     </Tag>
