@@ -38,7 +38,7 @@ export default class extends Component {
   render() {
     const { todos } = this.state
     return (
-      <Page heading="Tasks">
+      <Page heading="Tasks" canSort>
         <TodoList todos={todos} onCheckboxClick={this.handleCheckboxClick} />
       </Page>
     )

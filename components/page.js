@@ -2,14 +2,14 @@ import Meta from './meta'
 import Sidebar from './sidebar'
 import Header from './header'
 
-export default ({ children, heading }) => (
+export default ({ children, heading, canSort }) => (
   <div className="page">
     <Meta />
     <aside>
       <Sidebar />
     </aside>
     <main>
-      <Header heading={heading} />
+      <Header heading={heading} canSort={canSort}/>
       {children}
     </main>
     <style jsx>

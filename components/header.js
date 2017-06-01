@@ -1,12 +1,14 @@
 import SortBy from './sortby'
 
-export default ({ heading }) => (
+export default ({ heading, canSort }) => (
   <header>
     <div className="wrap">
       <h1>{heading}</h1>
-      <div className="right">
-        <SortBy />
-      </div>
+      {canSort &&
+        <div className="right">
+          <SortBy />
+        </div>
+      }
     </div>
     <style jsx>
       {`
