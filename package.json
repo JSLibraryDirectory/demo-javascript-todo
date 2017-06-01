@@ -1,9 +1,14 @@
 {
-  "name": "create-next-example-app",
+  "name": "rapido",
+  "version": "0.0.1",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT",
+    "prestart": "next build"
+  },
+  "engines": {
+    "node": "7.6.0"
   },
   "dependencies": {
     "@rapid-io/client": "https://github.com/Rapid-SDK/javascript.git#dev",
