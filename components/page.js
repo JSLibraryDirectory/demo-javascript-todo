@@ -21,6 +21,7 @@ export default ({ children, heading }) => (
 
       aside {
         flex: 1 0 280px;
+        max-width: 400px;
       }
 
       main {

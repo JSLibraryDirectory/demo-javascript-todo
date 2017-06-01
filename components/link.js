@@ -1,14 +1,16 @@
 import Link from 'next/link'
 
-export default ({ href, children, onClick, inverted = false }) => (
+export default ({ href, children, onClick, inverted = false, margin = 0 }) => (
   <Link href={href}>
-    <a className={inverted && 'inverted'}>
+    <a className={inverted && 'inverted'} style={{margin}}>
       {children}
       <style jsx>
         {`
         a {
           background: #CF4647;
-          padding: 25px 70px;
+          padding: 25px 0;
+          text-align: center;
+          min-width: 244px;
           display: inline-block;
           cursor: pointer;
           border-radius: 4px;

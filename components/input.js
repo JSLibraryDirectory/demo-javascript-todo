@@ -1,11 +1,12 @@
-export default ({ placeholder, value, onChange, name }) => (
+export default ({ placeholder, value, onChange, name, margin = 0 }) => (
   <div>
     <input
       type='text'
       value={value}
       placeholder={placeholder}
       name={name}
-      onChange={onChange} />
+      onChange={onChange}
+      style={{ margin }} />
     <style jsx>
       {`
       input {
@@ -14,6 +15,7 @@ export default ({ placeholder, value, onChange, name }) => (
         padding: 20px;
         font-size: 1.1rem;
         width: 100%;
+        display: block;
       }
     `}
     </style>
