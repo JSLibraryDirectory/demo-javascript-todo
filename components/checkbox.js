@@ -18,6 +18,11 @@ export default ({ checked = true, onChange }) => (
         border: 2px solid #EEEBF3;
         cursor: pointer;
         outline: none;
+        transition: border .2s ease;
+      }
+
+      input:hover {
+        border-color: #CF4647;
       }
       input:checked {
         background: #CF4647;
