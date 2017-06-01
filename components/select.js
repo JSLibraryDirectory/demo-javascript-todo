@@ -1,5 +1,5 @@
-export default ({ options, selected }) => (
-  <select name='priority'>
+export default ({ options, selected, margin }) => (
+  <select name='priority' style={{margin}}>
     {options.map(option => (
        <option value={option} selected={selected ? selected === option : 'Low'}>
          {option}
