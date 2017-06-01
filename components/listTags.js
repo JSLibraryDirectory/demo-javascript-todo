@@ -34,7 +34,12 @@ export default () => (
           clear: both;
           cursor: pointer;
           font-size: 1.5rem;
-          position: relative;          
+          position: relative;  
+          transition: color .2s ease;        
+        }
+
+        li:hover {
+          color: #CF4647;
         }
 
         li:before {

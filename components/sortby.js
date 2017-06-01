@@ -52,12 +52,17 @@ export default class extends Component {
             padding-right: 15px;
             color: #444444;
           }
-
+          
           .button__selected {
             font-weight: 400;
             margin: 0 10px;
             min-width: 90px;
             display: inline-block;
+            transition: color .2s ease;
+          }
+
+          button:hover .button__selected {
+            color: #CF4647;
           }
 
           .arrow {
