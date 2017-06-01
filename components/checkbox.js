@@ -16,6 +16,8 @@ export default ({ checked = true, onChange }) => (
         border-radius: 4px;
         position: relative;
         border: 2px solid #EEEBF3;
+        cursor: pointer;
+        outline: none;
       }
       input:checked {
         background: #CF4647;
