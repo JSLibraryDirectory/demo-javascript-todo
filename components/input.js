@@ -17,6 +17,13 @@ export default ({ placeholder, value, onChange, name, margin = 0 }) => (
         font-size: 1.8rem;
         width: 100%;
         display: block;
+        outline: none;
+        transition: border .2s ease;
+      }
+
+      input:focus,
+      input:hover{
+        border-color: #c4c3c9;
       }
     `}
     </style>
