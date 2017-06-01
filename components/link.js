@@ -8,11 +8,11 @@ export default ({ href, children, onClick, inverted = false }) => (
         {`
         a {
           background: #CF4647;
-          padding: 25px 70px;
+          padding: 17px 70px;
           display: inline-block;
           cursor: pointer;
           border-radius: 4px;
-          font-size: 1.2rem;
+          font-size: 1.8rem;
           color: white;
           text-decoration: none;
           transition: .5s ease;
