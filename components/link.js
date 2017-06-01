@@ -1,43 +1,60 @@
 import Link from 'next/link'
 
-export default ({ href, children, onClick, inverted = false, margin = 0, prefetch = false }) => (
-  <Link href={href} prefetch={prefetch}>
-    <a className={inverted && 'inverted'} style={{margin}}>
-      {children}
-      <style jsx>
-        {`
-        a {
-          background: #CF4647;
-          padding: 15px 0;
-          text-align: center;
-          min-width: 244px;
-          display: inline-block;
-          cursor: pointer;
-          border-radius: 4px;
-          font-size: 1.8rem;
-          color: white;
-          text-decoration: none;
-          transition: .5s ease;
-          border: 1px solid #CF4647;
-        }
+const styles = () => (
+  <style jsx>
+    {`
+    .button {
+      background: #CF4647;
+      padding: 23px 0;
+      text-align: center;
+      min-width: 244px;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1.8rem;
+      color: white;
+      text-decoration: none;
+      transition: .5s ease;
+      border: 1px solid #CF4647;
+      outline: none;
+      line-height: 1;
+    }
 
-        a:hover {
-          color: #CF4647;
-          background: white;
-        }
+    .button:hover {
+      color: #CF4647;
+      background: white;
+    }
 
-        a.inverted {
-          background: white;              
-          color: #CF4647;
-          border: 1px solid #CF4647;
-        }
-        
-        a.inverted:hover {
-          background: #CF4647;
-          color: white;                        
-        }
-      `}
-      </style>
-    </a>
-  </Link>
+    .button.inverted {
+      background: white;              
+      color: #CF4647;
+      border: 1px solid #CF4647;
+    }
+    
+    .button.inverted:hover {
+      background: #CF4647;
+      color: white;                        
+    }
+  `}
+  </style>
 )
+
+export default ({ href, type, children, onClick, inverted = false, margin = 0, prefetch = false }) => {
+  if (type === 'button') {
+    return (
+      <button type="button" className={`button ${inverted && 'inverted'}`} style={{margin}} onClick={onClick}>
+        {children}
+        {styles()}
+      </button>
+    )
+  }
+
+  return (
+    <Link href={href} prefetch={prefetch}>
+      <a className={`button ${inverted && 'inverted'}`} style={{margin}}>
+        {children}
+        {styles()}
+      </a>
+    </Link>
+  )
+}
