@@ -30,15 +30,16 @@ export default ({
             font-size: 1.8rem;
             color: white;
             text-decoration: none;
-            transition: .5s ease;
+            transition: .2s ease;
             border: 1px solid #CF4647;
             outline: none;
             line-height: 1;
           }
 
           .button:hover {
-            color: #CF4647;
-            background: white;
+            color: #fff;
+            background: #FA3435;
+            border-color: #FA3435;
           }
 
           .button.inverted {
@@ -48,7 +49,8 @@ export default ({
           }
           
           .button.inverted:hover {
-            background: #CF4647;
+            background: #cdccd2;
+            border-color: #cdccd2;
             color: white;                        
           }
         `}</style>
@@ -72,15 +74,16 @@ export default ({
             font-size: 1.8rem;
             color: white;
             text-decoration: none;
-            transition: .5s ease;
+            transition: .2s ease;
             border: 1px solid #CF4647;
             outline: none;
             line-height: 1;
           }
 
           .button:hover {
-            color: #CF4647;
-            background: white;
+            color: #fff;
+            background: #FA3435;
+            border-color: #FA3435;
           }
 
           .button.inverted {
@@ -90,7 +93,8 @@ export default ({
           }
           
           .button.inverted:hover {
-            background: #CF4647;
+            background: #cdccd2;
+            border-color: #cdccd2;
             color: white;                        
           }
         `}</style>
