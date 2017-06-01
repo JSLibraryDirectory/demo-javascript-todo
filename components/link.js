@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
-export default ({ href, children, onClick, inverted = false, margin = 0 }) => (
-  <Link href={href}>
+export default ({ href, children, onClick, inverted = false, margin = 0, prefetch = false }) => (
+  <Link href={href} prefetch={prefetch}>
     <a className={inverted && 'inverted'} style={{margin}}>
       {children}
       <style jsx>

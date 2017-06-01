@@ -8,7 +8,7 @@ export default () => (
       <h1>Rapid.io Demo App</h1>
     </header>
     <div className="body">
-      <Link className="button" href="/create">
+      <Link className="button" href="/create" prefetch>
         Create Task
       </Link>
       <ListTags />
@@ -41,7 +41,7 @@ export default () => (
       .body {
         padding: 42px 36px 42px 130px;
       }
-      `}
+    `}
     </style>
   </div>
 )
