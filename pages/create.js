@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Router from 'next/router'
 
 import Page from '../components/page'
 import Link from '../components/link'
@@ -33,6 +34,7 @@ export default class extends Component {
     try {
       await createTodo({ ...this.state })
       console.log('success')
+      Router.push('/')
     } catch (err) {
       console.log(err)      
     }
@@ -68,9 +70,9 @@ export default class extends Component {
             <Link href='/' inverted margin='0 30px 0 0'>
               Cancel
             </Link>
-            <button onClick={this.handleCreateClick}>
+            <Link type="button" onClick={this.handleCreateClick}>
               Create
-            </button>
+            </Link>
             </div>
           </div>
         </div>

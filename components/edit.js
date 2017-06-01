@@ -39,6 +39,7 @@ export default class extends Component {
   }
 
   render () {
+    // const { onCancel, onSave, onDelete }
     const { title, description, priority, tag, completed } = this.state
     return (
         <div className='wrap'>
