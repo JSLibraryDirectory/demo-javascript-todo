@@ -16,7 +16,7 @@ export default ({
       <Checkbox checked={completed} onChange={onCheckboxClick} />
       <div className="text" onClick={onTodoClick}>
         <h2>
-          {title}
+          <span className="title">{title}</span>
           <Badge type={tag} margin="-4px 0 0 20px">{tag}</Badge>
         </h2>
         <p>{description}</p>
@@ -43,8 +43,17 @@ export default ({
         margin: 0 30px;
       }
       h2 {
-        font-weight: 600;
+        line-height: 1.3;
         margin-bottom: 8px;
+      }
+      .title {
+        font-weight: 600;
+        line-height: 1.3;
+        border-bottom: 2px solid #fff;
+        transition: border .2s ease;     
+      }
+      h2:hover .title {
+        border-bottom: 2px solid #EEEBF3;
       }
     `}
     </style>
