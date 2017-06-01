@@ -19,7 +19,7 @@ export default ({ checked = true, onChange }) => (
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHRpdGxlPiAgICAgICAgRmlsbCAzICA=gIDwvdGl0bGU+ICAgIDxwYXRoIGQ9Ik03Ljc1IDExTDEuOTg0IDUuMzkuNzUgNi42MjZsNyA2Ljk5OUwxOS41NjIgMS44MTIgMTguMzMuNTh6IiBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTcuNzUgMTFMMS45ODQgNS4zOS43NSA2LjYyNmw3IDYuOTk5TDE5LjU2MiAxLjgxMiAxOC4zMy41OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
       }
     `}
     </style>
