@@ -1,8 +1,8 @@
 export default ({ heading }) => (
   <header>
-    <div className="inner">
+    <div className="wrap">
       <h1>{heading}</h1>
-      <div>
+      <div className="right">
         <button>Sort By</button>
         <button>Date Created</button>
       </div>
@@ -16,7 +16,7 @@ export default ({ heading }) => (
         padding-left: 60px;
         border-bottom: 1px solid #EEEBF3;
       }
-      .inner {
+      .wrap {
         width: 100%;
         max-width: 900px;
         display: flex;
@@ -32,6 +32,7 @@ export default ({ heading }) => (
       h1 {
         margin: 0;
         font-size: 1.5rem;
+        font-weight: 600;
       }
     `}
     </style>

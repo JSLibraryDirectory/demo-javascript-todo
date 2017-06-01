@@ -17,6 +17,9 @@ export default ({ title, description, completed }) => (
       .text {
         margin: 0 30px;
       }
+      h2 {
+        font-weight: 600;
+      }
     `}
     </style>
   </div>
