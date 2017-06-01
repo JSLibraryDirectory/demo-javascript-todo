@@ -1,7 +1,7 @@
-export default ({ options, selected, margin }) => (
-  <select name='priority' style={{margin}}>
+export default ({ onClick, options, selected, margin }) => (
+  <select name='priority' onChange={onClick} style={{margin}} value={selected || 'Low'}>
     {options.map(option => (
-       <option value={option} selected={selected ? selected === option : 'Low'}>
+       <option key={option} value={option}>
          {option}
        </option>
      ))}

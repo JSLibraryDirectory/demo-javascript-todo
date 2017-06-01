@@ -22,7 +22,7 @@ const Dot = () => (
 
 export default ({ priority }) => (
   <div>
-    {[...Array(constants[priority]).keys()].map(() => <Dot />)}
+    {[...Array(constants[priority]).keys()].map(val => <Dot key={val} />)}
     <style jsx>{`
       div {
         display: flex;

@@ -2,11 +2,11 @@ import Checkbox from './checkbox'
 import Priority from './priority'
 import Badge from './badge'
 
-export default ({ title, description, completed, tag, priority }) => (
+export default ({ onCheckboxClick, onTodoClick, title, description, completed, tag, priority }) => (
   <div className="todo">
     <div className="left">
-      <Checkbox />
-      <div className="text">
+      <Checkbox checked={completed} onChange={onCheckboxClick} />
+      <div className="text" onClick={onTodoClick}>
         <h2>
           {title}
           <Badge type={tag} margin="-4px 0 0 20px">{tag}</Badge>
@@ -31,6 +31,7 @@ export default ({ title, description, completed, tag, priority }) => (
         align-items: center;
       }
       .text {
+        cursor: pointer;
         margin: 0 30px;
       }
       h2 {

@@ -1,6 +1,6 @@
 export default ({ checked = true, onChange }) => (
   <div>
-    <input type='checkbox' checked={checked} onChange={onChange} />
+    <input type='checkbox' name="completed" checked={checked} onChange={onChange} />
     <style jsx>
       {`
       input {
@@ -10,9 +10,12 @@ export default ({ checked = true, onChange }) => (
         height: 30px;
         border-radius: 4px;
         position: relative;
+        border: 2px solid #EEEBF3;
       }
       input:checked {
         background: #CF4647;
+        border: 2px solid #CF4647;
+        
       }
       input:checked:after {
         position: absolute;

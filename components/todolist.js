@@ -1,8 +1,15 @@
 import Todo from './todo'
 
-export default ({ todos }) => (
+export default ({ todos, onCheckboxClick, onTodoClick }) => (
   <div>
-    {todos.map(todo => <Todo key={todo.id} {...todo} />)}
+    {todos.map(todo => 
+        <Todo
+          key={todo.id} {...todo.body}
+          onCheckboxClick={() => onCheckboxClick(todo.id, todo.body.completed)}
+          onTodoClick={() => onTodoClick(todo.id)}
+        />
+      )
+    }
     <style jsx>
       {`
         div {

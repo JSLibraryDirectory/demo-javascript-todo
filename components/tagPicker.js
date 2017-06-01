@@ -35,7 +35,7 @@ const Tag = ({ children, selected, margin, onClick }) => (
   </button>
 )
 
-export default ({ onClick, selected = 'home' }) => (
+export default ({ onClick, selected }) => (
   <div>
     <span>Tags</span>
     <Tag onClick={() => onClick('home')} selected={selected === 'home' && 'home'} margin="0 20px 0 0">
