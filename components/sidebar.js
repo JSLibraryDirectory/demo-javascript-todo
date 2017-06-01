@@ -1,3 +1,5 @@
+import NextLink from 'next/link'
+
 import Link from './link'
 import ListTags from './listTags'
 import ListStatuses from './listStatuses'
@@ -5,16 +7,20 @@ import ListStatuses from './listStatuses'
 export default () => (
   <div className="sidebar">
     <header>
-      <h1>Rapid.io Demo App</h1>
+      <NextLink href="/">
+        <a className="logo">
+          Rapid.io Demo App
+        </a>
+      </NextLink>
     </header>
     <div className="body">
-      <Link className="button" href="/create" prefetch>
+      <Link className="button" href="/new" prefetch>
         Create Task
       </Link>
       <ListTags />
       <ListStatuses />
     </div>
-    
+
     <style jsx>
       {`
       .sidebar {
@@ -31,11 +37,13 @@ export default () => (
         padding-left: 130px;
       }
 
-      h1 {
+      a {
         font-size: 1.8rem;
         font-weight: 500;
         margin: 0;
         padding: 0;
+        text-decoration: none;
+        color: black;
       }
 
       .body {

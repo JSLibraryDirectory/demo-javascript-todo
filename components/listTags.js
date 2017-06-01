@@ -17,7 +17,7 @@ export default () => (
       <li className="other">
         Other
         <Badge type="other">3</Badge>
-      </li>    
+      </li>
     </ul>
 
     <style jsx>

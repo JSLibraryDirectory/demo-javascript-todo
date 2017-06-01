@@ -1,12 +1,13 @@
 const constants = {
-  'low': 1,
-  'medium': 2,
-  'high': 3
+  low: 1,
+  medium: 2,
+  high: 3
 }
 
 const Dot = () => (
   <span>
-    <style jsx>{`
+    <style jsx>
+      {`
       span {
         height: 8px;
         width: 8px;
@@ -23,7 +24,8 @@ const Dot = () => (
 export default ({ priority }) => (
   <div>
     {[...Array(constants[priority]).keys()].map(val => <Dot key={val} />)}
-    <style jsx>{`
+    <style jsx>
+      {`
       div {
         display: flex;
         flex-direction: column;

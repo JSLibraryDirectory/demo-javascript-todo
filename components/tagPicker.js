@@ -38,13 +38,24 @@ const Tag = ({ children, selected, margin, onClick }) => (
 export default ({ onClick, selected }) => (
   <div>
     <span>Tags</span>
-    <Tag onClick={() => onClick('home')} selected={selected === 'home' && 'home'} margin="0 20px 0 0">
+    <Tag
+      onClick={() => onClick('home')}
+      selected={selected === 'home' && 'home'}
+      margin="0 20px 0 0"
+    >
       Home
     </Tag>
-    <Tag onClick={() => onClick('work')} selected={selected === 'work' && 'work'} margin="0 20px 0 0">
+    <Tag
+      onClick={() => onClick('work')}
+      selected={selected === 'work' && 'work'}
+      margin="0 20px 0 0"
+    >
       Work
     </Tag>
-    <Tag onClick={() => onClick('other')} selected={selected === 'other' && 'other'}>
+    <Tag
+      onClick={() => onClick('other')}
+      selected={selected === 'other' && 'other'}
+    >
       Other
     </Tag>
     <style jsx>{`

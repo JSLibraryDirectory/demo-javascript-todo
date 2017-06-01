@@ -3,7 +3,7 @@ import Sidebar from './sidebar'
 import Header from './header'
 
 export default ({ children, heading }) => (
-  <div className='page'>
+  <div className="page">
     <Meta />
     <aside>
       <Sidebar />

@@ -3,20 +3,20 @@ import Check from './iconCheck'
 import Arrow from './iconArrow'
 
 export default class extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       isOpen: false,
-      selectedItem: 'Date Created',
+      selectedItem: 'Date Created'
     }
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick () {
+  handleClick() {
     this.setState(prev => ({ isOpen: !prev.isOpen }))
   }
 
-  render () {
+  render() {
     const { list, children, activeItem } = this.props
     const { isOpen, selectedItem } = this.state
     return (
@@ -30,14 +30,13 @@ export default class extends Component {
             <Arrow />
           </span>
         </button>
-        {isOpen && (
+        {isOpen &&
           <ul>
             <li className={'selected'}><Check /> Date Created</li>
             <li>Priority</li>
             <li>Completed</li>
-            <li>Title</li>  
-          </ul>
-        )}
+            <li>Title</li>
+          </ul>}
         <style jsx>
           {`
           .wrapper {

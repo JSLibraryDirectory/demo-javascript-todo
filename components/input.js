@@ -1,12 +1,13 @@
 export default ({ placeholder, value, onChange, name, margin = 0 }) => (
   <div>
     <input
-      type='text'
+      type="text"
       value={value}
       placeholder={placeholder}
       name={name}
       onChange={onChange}
-      style={{ margin }} />
+      style={{ margin }}
+    />
     <style jsx>
       {`
       input {

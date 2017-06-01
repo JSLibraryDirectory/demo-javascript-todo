@@ -1,6 +1,6 @@
 export default ({ children, type, margin }) => (
-  <span className={`badge ${type}`} style={{margin}}>
-    { children }
+  <span className={`badge ${type}`} style={{ margin }}>
+    {children}
     <style jsx>
       {`
         .badge {
@@ -28,5 +28,4 @@ export default ({ children, type, margin }) => (
       `}
     </style>
   </span>
-
 )

@@ -7,7 +7,7 @@ export default () => (
     <ul>
       <li><Check /> All</li>
       <li>Completed</li>
-      <li>Incompleted</li>    
+      <li>Incompleted</li>
     </ul>
 
     <style jsx>

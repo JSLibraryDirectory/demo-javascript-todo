@@ -1,11 +1,16 @@
-export default ({ onClick, options, selected, margin }) => (
-  <select name='priority' onChange={onClick} style={{margin}} value={selected || 'Low'}>
+export default ({ onChange, options, value, margin }) => (
+  <select
+    name="priority"
+    onChange={onChange}
+    style={{ margin }}
+    value={value || 'low'}
+  >
     {options.map(option => (
-       <option key={option} value={option}>
-         {option}
-       </option>
-     ))}
-     <style jsx>{`
+      <option key={option} value={option}>
+        {option}
+      </option>
+    ))}
+    <style jsx>{`
       select {
         border: 1px solid #EEEBF3;
         border-radius: 4px;

@@ -1,6 +1,11 @@
 export default ({ checked = true, onChange }) => (
   <div>
-    <input type='checkbox' name="completed" checked={checked} onChange={onChange} />
+    <input
+      type="checkbox"
+      name="completed"
+      checked={checked}
+      onChange={onChange}
+    />
     <style jsx>
       {`
       input {

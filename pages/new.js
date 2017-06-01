@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Router from 'next/router'
 
 import Page from '../components/page'
 import Link from '../components/link'
@@ -10,69 +11,78 @@ import Checkbox from '../components/checkbox'
 import createTodo from '../lib/create-todo'
 
 export default class extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       title: '',
       description: '',
       priority: 'medium',
       tag: 'home',
-      completed: false,
+      completed: false
     }
-    this.handleInputChange = this.handleInputChange.bind(this)
-    
   }
 
-  handleInputChange ({ target }) {
-    console.log(target.name, target.value)
+  handleInputChange = ({ target }) => {
     const value = target.type === 'checkbox' ? target.checked : target.value
     this.setState({ [target.name]: value })
   }
 
-  handleCreateClick = async ()  => {
+  handleCreateClick = async () => {
     try {
       await createTodo({ ...this.state })
-      console.log('success')
+      Router.push('/')
     } catch (err) {
-      console.log(err)      
+      console.log(err)
     }
   }
 
-  render () {
-    // const { onCancel, onSave, onDelete }
+  render() {
     const { title, description, priority, tag, completed } = this.state
     return (
-        <div className='wrap'>
+      <Page heading="Create a task">
+        <div className="wrap">
           <Input
-            placeholder='Title'
+            placeholder="Title"
             value={title}
             onChange={this.handleInputChange}
-            name='title'
-            margin='0 0 40px 0' />
+            name="title"
+            margin="0 0 40px 0"
+          />
           <Input
-            placeholder='Description'
+            placeholder="Description"
             value={description}
             onChange={this.handleInputChange}
-            name='description'
-            margin='0 0 40px 0' />
+            name="description"
+            margin="0 0 40px 0"
+          />
           <div className="column">
-            <Select onChange={this.handleInputChange} selected={priority} options={['low', 'medium', 'high']} margin="0 120px 0 0" />
-            <TagPicker onClick={value => this.handleInputChange({ target: { name: 'tag', value } })} selected={tag} />
+            <Select
+              onChange={this.handleInputChange}
+              value={priority}
+              options={['low', 'medium', 'high']}
+              margin="0 120px 0 0"
+            />
+            <TagPicker
+              onClick={value =>
+                this.handleInputChange({ target: { name: 'tag', value } })}
+              selected={tag}
+            />
           </div>
-          <div className='bottom'>
+          <div className="bottom">
             <div className="completed">
               <span>Completed</span>
               <Checkbox onChange={this.handleInputChange} checked={completed} />
             </div>
             <div>
-            <Link href='/' inverted margin='0 30px 0 0'>
-              Cancel
-            </Link>
-            <button onClick={this.handleCreateClick}>
-              Create
-            </button>
+              <Link href="/" inverted margin="0 30px 0 0">
+                Cancel
+              </Link>
+              <Link type="button" onClick={this.handleCreateClick}>
+                Create
+              </Link>
             </div>
           </div>
+        </div>
         <style jsx>
           {`
           .wrap {
@@ -102,7 +112,7 @@ export default class extends Component {
           }
         `}
         </style>
-        </div>
+      </Page>
     )
   }
 }

@@ -2,7 +2,15 @@ import Checkbox from './checkbox'
 import Priority from './priority'
 import Badge from './badge'
 
-export default ({ onCheckboxClick, onTodoClick, title, description, completed, tag, priority }) => (
+export default ({
+  onCheckboxClick,
+  onTodoClick,
+  title,
+  description,
+  completed,
+  tag,
+  priority
+}) => (
   <div className="todo">
     <div className="left">
       <Checkbox checked={completed} onChange={onCheckboxClick} />
@@ -15,7 +23,7 @@ export default ({ onCheckboxClick, onTodoClick, title, description, completed, t
       </div>
     </div>
     <div className="right">
-      <Priority priority={priority}/>
+      <Priority priority={priority} />
     </div>
     <style jsx>
       {`
