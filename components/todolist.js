@@ -7,7 +7,7 @@ export default ({ todos }) => (
       {`
         div {
           margin-left: 60px;
-          max-width: 840px;
+          margin-right: 130px;
         }
       `}
     </style>
