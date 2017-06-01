@@ -19,7 +19,7 @@ export default ({ heading }) => (
       .wrap {
         width: 100%;
         margin-left: 60px;
-        max-width: 840px;
+        margin-right: 130px;
         display: flex;
         justify-content: space-between;
         align-items: center;

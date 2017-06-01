@@ -51,7 +51,7 @@ export default class extends Component {
           .wrap {
             margin-top: 40px;
             margin-left: 60px;
-            max-width: 840px;
+            margin-right: 130px;
           }
           .bottom {
             margin-top: 60px;
