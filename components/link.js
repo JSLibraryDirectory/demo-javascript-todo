@@ -23,7 +23,7 @@ export default ({
             background: #CF4647;
             padding: 23px 0;
             text-align: center;
-            min-width: 244px;
+            min-width: 233px;
             display: inline-block;
             cursor: pointer;
             border-radius: 4px;
@@ -67,7 +67,7 @@ export default ({
             background: #CF4647;
             padding: 23px 0;
             text-align: center;
-            min-width: 244px;
+            min-width: 233px;
             display: inline-block;
             cursor: pointer;
             border-radius: 4px;
