@@ -14,6 +14,7 @@ const todos = [
     id: 1,
     priority: 'low',
     completed: false,
+    tag: 'home',
     title: 'hello',
     description: 'Some descriptioon'
   },
@@ -21,6 +22,7 @@ const todos = [
     id: 2,
     priority: 'high',    
     completed: false,
+    tag: 'work',
     title: 'hello',
     description: 'Some descriptioon'
   },
@@ -28,6 +30,7 @@ const todos = [
     id: 3,
     priority: 'medium',
     completed: false,
+    tag: 'other',
     title: 'hello',
     description: 'Some descriptioon'
   }

@@ -1,12 +1,16 @@
 import Checkbox from './checkbox'
 import Priority from './priority'
+import Badge from './badge'
 
-export default ({ title, description, completed, priority }) => (
+export default ({ title, description, completed, tag, priority }) => (
   <div className="todo">
     <div className="left">
       <Checkbox />
       <div className="text">
-        <h2>{title}</h2>
+        <h2>
+          {title}
+          <Badge type={tag} margin="-4px 0 0 20px">{tag}</Badge>
+        </h2>
         <p>{description}</p>
       </div>
     </div>
@@ -31,6 +35,7 @@ export default ({ title, description, completed, priority }) => (
       }
       h2 {
         font-weight: 600;
+        margin-bottom: 8px;
       }
     `}
     </style>

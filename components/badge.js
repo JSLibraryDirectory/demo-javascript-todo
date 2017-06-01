@@ -1,5 +1,5 @@
-export default ({ children, type }) => (
-  <span className={`badge ${type}`}>
+export default ({ children, type, margin }) => (
+  <span className={`badge ${type}`} style={{margin}}>
     { children }
     <style jsx>
       {`
