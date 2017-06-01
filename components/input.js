@@ -13,7 +13,7 @@ export default ({ placeholder, value, onChange, name, margin = 0 }) => (
         border: 1px solid #EEEBF3;
         border-radius: 4px;
         padding: 20px;
-        font-size: 1.1rem;
+        font-size: 1.8rem;
         width: 100%;
         display: block;
       }

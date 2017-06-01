@@ -12,7 +12,7 @@ export default ({ options, selected }) => (
         appearance: none;
         padding: 20px;
         background: transparent;
-        font-size: 1.1rem;
+        font-size: 1.8rem;
         display: block;
         width: 100%;
       }

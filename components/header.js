@@ -24,15 +24,9 @@ export default ({ heading }) => (
         justify-content: space-between;
         align-items: center;
       }
-      button {
-        font-size: 1rem;
-        border: none;
-        background: none;
-        cursor: pointer;
-      }
       h1 {
         margin: 0;
-        font-size: 1.5rem;
+        font-size: 2.4rem;
         font-weight: 600;
       }
     `}
