@@ -17,7 +17,7 @@ export default class extends Component {
       title: '',
       description: '',
       priority: 1,
-      tags: ['Home'],
+      tags: ['home'],
       done: false,
     }
   }

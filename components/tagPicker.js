@@ -57,22 +57,22 @@ export default ({ onClick, selected }) => (
   <div>
     <span>Tags</span>
     <Tag
-      onClick={() => onClick('Home')}
-      selected={`home ${selected.indexOf('Home') > -1 && 'selected'}`}
+      onClick={() => onClick('home')}
+      selected={`home ${selected.indexOf('home') > -1 && 'selected'}`}
       margin="0 20px 0 0"
     >
       Home
     </Tag>
     <Tag
-      onClick={() => onClick('Work')}
-      selected={`work ${selected.indexOf('Work') > -1 && 'selected'}`}
+      onClick={() => onClick('work')}
+      selected={`work ${selected.indexOf('work') > -1 && 'selected'}`}
       margin="0 20px 0 0"
     >
       Work
     </Tag>
     <Tag
-      onClick={() => onClick('Other')}
-      selected={`other ${selected.indexOf('Other') > -1 && 'selected'}`}
+      onClick={() => onClick('other')}
+      selected={`other ${selected.indexOf('other') > -1 && 'selected'}`}
     >
       Other
     </Tag>

@@ -17,7 +17,7 @@ export default ({
       <div className="text" onClick={onTodoClick}>
         <h2>
           <span className="title">{title}</span>
-          {tags && tags.map((val) => <Badge type={val.toLowerCase()} key={val} margin="-4px 0 0 20px">{val}</Badge> )}
+          {tags && tags.map((val) => <Badge type={val} key={val} margin="-4px 0 0 20px">{val}</Badge> )}
         </h2>
         <p>{description}</p>
       </div>
