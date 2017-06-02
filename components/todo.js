@@ -7,17 +7,17 @@ export default ({
   onTodoClick,
   title,
   description,
-  completed,
-  tag,
+  done,
+  tags,
   priority
 }) => (
   <div className="todo">
     <div className="left">
-      <Checkbox checked={completed} onChange={onCheckboxClick} />
+      <Checkbox name="done" checked={done} onChange={onCheckboxClick} />
       <div className="text" onClick={onTodoClick}>
         <h2>
           <span className="title">{title}</span>
-          <Badge type={tag} margin="-4px 0 0 20px">{tag}</Badge>
+          {tags && tags.map((val) => <Badge type={val.toLowerCase()} key={val} margin="-4px 0 0 20px">{val}</Badge> )}
         </h2>
         <p>{description}</p>
       </div>

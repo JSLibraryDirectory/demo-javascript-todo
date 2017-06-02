@@ -16,9 +16,9 @@ export default class extends Component {
     this.state = {
       title: '',
       description: '',
-      priority: 'medium',
-      tag: 'home',
-      completed: false
+      priority: 1,
+      tags: ['Home'],
+      done: false,
     }
   }
 
@@ -27,9 +27,28 @@ export default class extends Component {
     this.setState({ [target.name]: value })
   }
 
+  handlePriorityChange = ({ target: { value }}) => {
+    this.setState({ 'priority': parseInt(value) })
+  }
+
+  handleTagsChange = (value) => {
+    const { tags } = this.state
+    const index = tags.indexOf(value)
+
+    if (index === -1) { // Tag is not in the array
+      tags.push(value)
+    } else {
+      tags.splice(index, 1)
+    }
+
+    this.setState({ tags })
+  }
+
   handleCreateClick = async () => {
+    const date = new Date()
+
     try {
-      await createTodo({ ...this.state })
+      await createTodo({ ...this.state, createdAt: date.toISOString() })
       Router.push('/')
     } catch (err) {
       console.log(err)
@@ -37,7 +56,7 @@ export default class extends Component {
   }
 
   render() {
-    const { title, description, priority, tag, completed } = this.state
+    const { title, description, priority, tags, done } = this.state
     return (
       <Page heading="Create a task">
         <div className="wrap">
@@ -57,21 +76,20 @@ export default class extends Component {
           />
           <div className="column">
             <Select
-              onChange={this.handleInputChange}
+              onChange={this.handlePriorityChange}
               value={priority}
-              options={['low', 'medium', 'high']}
+              options={[0, 1, 2]}
               margin="0 120px 0 0"
             />
             <TagPicker
-              onClick={value =>
-                this.handleInputChange({ target: { name: 'tag', value } })}
-              selected={tag}
+              onClick={this.handleTagsChange}
+              selected={tags}
             />
           </div>
           <div className="bottom">
             <div className="completed">
               <span>Completed</span>
-              <Checkbox onChange={this.handleInputChange} checked={completed} />
+              <Checkbox name="done" onChange={this.handleInputChange} checked={done} />
             </div>
             <div>
               <Link href="/" inverted margin="0 30px 0 0">

@@ -1,8 +1,8 @@
-export default ({ checked = true, onChange }) => (
+export default ({ checked = true, name, onChange }) => (
   <div>
     <input
       type="checkbox"
-      name="completed"
+      name={name}
       checked={checked}
       onChange={onChange}
     />

@@ -38,6 +38,23 @@ export default class extends Component {
     }
   }
 
+  handlePriorityChange = ({ target: { value }}) => {
+    this.setState({ 'priority': parseInt(value) })
+  }
+
+  handleTagsChange = (value) => {
+    const { tags } = this.state
+    const index = tags.indexOf(value)
+
+    if (index === -1) {
+      tags.push(value)
+    } else {
+      tags.splice(index, 1)
+    }
+
+    this.setState({ tags })
+  }
+
   handleDeleteClick = async () => {
     const { id } = this.props
     try {
@@ -49,7 +66,7 @@ export default class extends Component {
   }
 
   render() {
-    const { title, description, priority, tag, completed } = this.state
+    const { title, description, priority, tags, done } = this.state
     return (
       <Page heading="Edit a task">
         <div className="wrap">
@@ -69,15 +86,14 @@ export default class extends Component {
           />
           <div className="column">
             <Select
-              onChange={this.handleInputChange}
+              onChange={this.handlePriorityChange}
               value={priority}
-              options={['low', 'medium', 'high']}
+              options={[0, 1, 2]}
               margin="0 120px 0 0"
             />
             <TagPicker
-              onClick={value =>
-                this.handleInputChange({ target: { name: 'tag', value } })}
-              selected={tag}
+              onClick={this.handleTagsChange}
+              selected={tags}
             />
           </div>
           <div className="bottom">
