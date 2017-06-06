@@ -61,7 +61,7 @@ export default class extends Component {
   render() {
     const { title, description, priority, tags, done } = this.state
     return (
-      <Page heading="Create a task">
+      <Page heading="Create Task">
         <div className="wrap">
           <Input
             placeholder="Title"

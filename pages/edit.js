@@ -75,7 +75,7 @@ export default class extends Component {
   render() {
     const { title, description, priority, tags, done } = this.state
     return (
-      <Page heading="Edit a task">
+      <Page heading="Edit Task">
         <div className="wrap">
           <Input
             placeholder="Title"
@@ -105,7 +105,7 @@ export default class extends Component {
           </div>
           <div className="bottom">
             <button className="delete" onClick={this.handleDeleteClick}>
-              Delete a Task
+              Delete this task
             </button>
             <div>
               <Link href="/" inverted margin="0 30px 0 0">
