@@ -30,11 +30,15 @@ export default class extends Component {
 
   handleSaveClick = async () => {
     const { id } = this.props
-    try {
-      await updateTodo(id, { ...this.state })
-      Router.push('/')
-    } catch (err) {
-      console.log(err)
+    const { title } = this.state
+
+    if (title !== '') {
+      try {
+        await updateTodo(id, { ...this.state })
+        Router.push('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 
@@ -57,11 +61,14 @@ export default class extends Component {
 
   handleDeleteClick = async () => {
     const { id } = this.props
-    try {
-      await deleteTodo(id)
-      Router.push('/')
-    } catch (err) {
-      console.log(err)
+
+    if (confirm('Are you sure?')) {
+      try {
+        await deleteTodo(id)
+        Router.push('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 

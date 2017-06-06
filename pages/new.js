@@ -46,12 +46,15 @@ export default class extends Component {
 
   handleCreateClick = async () => {
     const date = new Date()
+    const { title } = this.state
 
-    try {
-      await createTodo({ ...this.state, createdAt: date.toISOString() })
-      Router.push('/')
-    } catch (err) {
-      console.log(err)
+    if (title !== '') {
+      try {
+        await createTodo({ ...this.state, createdAt: date.toISOString() })
+        Router.push('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 
