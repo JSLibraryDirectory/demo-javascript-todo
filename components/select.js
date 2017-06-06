@@ -1,4 +1,4 @@
-const OPTIONS = ['low', 'medium', 'high']
+const OPTIONS = ['Low', 'Medium', 'High']
 
 export default ({ onChange, options, value, margin }) => (
   <select
@@ -9,7 +9,7 @@ export default ({ onChange, options, value, margin }) => (
   >
     {options.map(val => (
       <option key={val} value={val}>
-        {OPTIONS[val]}
+        {`${OPTIONS[val]} priority`}
       </option>
     ))}
     <style jsx>{`
