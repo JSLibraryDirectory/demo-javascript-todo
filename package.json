@@ -11,8 +11,8 @@
     "node": "7.6.0"
   },
   "dependencies": {
-    "@rapid-io/client": "https://github.com/Rapid-SDK/javascript.git#dev",
     "next": "latest",
+    "rapid-io": "^0.1.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }

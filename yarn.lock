@@ -2,19 +2,6 @@
 # yarn lockfile v1
 
 
-"@rapid-io/client@https://github.com/Rapid-SDK/javascript.git#dev":
-  version "0.0.1"
-  resolved "https://github.com/Rapid-SDK/javascript.git#fb5715b0760ed3591a4679f198c6c5721b94ec38"
-  dependencies:
-    "@rapid-io/protocol" "^0.0.64"
-    backo "^1.1.0"
-    base-64 "^0.1.0"
-    component-emitter "^1.2.1"
-    debug "^2.6.8"
-    shortid "^2.2.8"
-    sort-keys "^1.1.2"
-    ws "^3.0.0"
-
 "@rapid-io/protocol@^0.0.64":
   version "0.0.64"
   resolved "https://registry.yarnpkg.com/@rapid-io/protocol/-/protocol-0.0.64.tgz#53ba25bf1d5096c95e16abf0ae213b04ea57369a"
@@ -2595,6 +2582,19 @@ randombytes@^2.0.0, randombytes@^2.0.1:
 range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+rapid-io@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/rapid-io/-/rapid-io-0.1.2.tgz#ea0c28df0826ec23447e59e540fecdbfcf627402"
+  dependencies:
+    "@rapid-io/protocol" "^0.0.64"
+    backo "^1.1.0"
+    base-64 "^0.1.0"
+    component-emitter "^1.2.1"
+    debug "^2.6.8"
+    shortid "^2.2.8"
+    sort-keys "^1.1.2"
+    ws "^3.0.0"
 
 rc@^1.1.7:
   version "1.2.1"
