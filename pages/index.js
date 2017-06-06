@@ -23,20 +23,21 @@ export default class extends Component {
     this.todos.unsubscribe()
   }
 
-  handleCheckboxClick = async (id, completed) => {
+  handleCheckboxClick = async (id, done) => {
     this.setState(prev => ({
       todos: prev.todos.map(todo => {
         todo.body = todo.id === id
-          ? { ...todo.body, completed: !completed }
+          ? { ...todo.body, done: !done }
           : todo.body
         return todo
       })
     }))
-    await updateTodo(id, { completed: !completed })
+    await updateTodo(id, { done: !done })
   }
 
   render() {
     const { todos } = this.state
+
     return (
       <Page heading="Tasks" canSort>
         <TodoList todos={todos} onCheckboxClick={this.handleCheckboxClick} />

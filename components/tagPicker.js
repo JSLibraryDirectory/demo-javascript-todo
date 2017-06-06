@@ -58,21 +58,21 @@ export default ({ onClick, selected }) => (
     <span>Tags</span>
     <Tag
       onClick={() => onClick('home')}
-      selected={`home ${selected === 'home' && 'selected'}`}
+      selected={`home ${selected.indexOf('home') > -1 && 'selected'}`}
       margin="0 20px 0 0"
     >
       Home
     </Tag>
     <Tag
       onClick={() => onClick('work')}
-      selected={`work ${selected === 'work' && 'selected'}`}
+      selected={`work ${selected.indexOf('work') > -1 && 'selected'}`}
       margin="0 20px 0 0"
     >
       Work
     </Tag>
     <Tag
       onClick={() => onClick('other')}
-      selected={`other ${selected === 'other' && 'selected'}`}
+      selected={`other ${selected.indexOf('other') > -1 && 'selected'}`}
     >
       Other
     </Tag>
@@ -89,3 +89,4 @@ export default ({ onClick, selected }) => (
     `}</style>
   </div>
 )
+

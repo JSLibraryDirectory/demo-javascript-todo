@@ -1,9 +1,3 @@
-const constants = {
-  low: 1,
-  medium: 2,
-  high: 3
-}
-
 const Dot = () => (
   <span>
     <style jsx>
@@ -23,7 +17,7 @@ const Dot = () => (
 
 export default ({ priority }) => (
   <div>
-    {[...Array(constants[priority]).keys()].map(val => <Dot key={val} />)}
+    {[...Array(priority + 1).keys()].map((_, i) => <Dot key={i} />)}
     <style jsx>
       {`
       div {

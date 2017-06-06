@@ -30,28 +30,52 @@ export default class extends Component {
 
   handleSaveClick = async () => {
     const { id } = this.props
-    try {
-      await updateTodo(id, { ...this.state })
-      Router.push('/')
-    } catch (err) {
-      console.log(err)
+    const { title } = this.state
+
+    if (title !== '') {
+      try {
+        await updateTodo(id, { ...this.state })
+        Router.push('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
+  }
+
+  handlePriorityChange = ({ target: { value }}) => {
+    this.setState({ 'priority': parseInt(value) })
+  }
+
+  handleTagsChange = (value) => {
+    const tags = this.state.tags || []
+    const index = tags ? tags.indexOf(value) : -1
+
+    if (index === -1) {
+      tags.push(value)
+    } else {
+      tags.splice(index, 1)
+    }
+
+    this.setState({ tags })
   }
 
   handleDeleteClick = async () => {
     const { id } = this.props
-    try {
-      await deleteTodo(id)
-      Router.push('/')
-    } catch (err) {
-      console.log(err)
+
+    if (confirm('Are you sure?')) {
+      try {
+        await deleteTodo(id)
+        Router.push('/')
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 
   render() {
-    const { title, description, priority, tag, completed } = this.state
+    const { title, description, priority, tags, done } = this.state
     return (
-      <Page heading="Edit a task">
+      <Page heading="Edit Task">
         <div className="wrap">
           <Input
             placeholder="Title"
@@ -69,20 +93,19 @@ export default class extends Component {
           />
           <div className="column">
             <Select
-              onChange={this.handleInputChange}
+              onChange={this.handlePriorityChange}
               value={priority}
-              options={['low', 'medium', 'high']}
+              options={[0, 1, 2]}
               margin="0 120px 0 0"
             />
             <TagPicker
-              onClick={value =>
-                this.handleInputChange({ target: { name: 'tag', value } })}
-              selected={tag}
+              onClick={this.handleTagsChange}
+              selected={tags || []}
             />
           </div>
           <div className="bottom">
             <button className="delete" onClick={this.handleDeleteClick}>
-              Delete a Task
+              Delete this task
             </button>
             <div>
               <Link href="/" inverted margin="0 30px 0 0">

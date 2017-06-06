@@ -8,7 +8,7 @@ export default ({ todos, onCheckboxClick, onTodoClick }) => (
       <Todo
         key={todo.id}
         {...todo.body}
-        onCheckboxClick={() => onCheckboxClick(todo.id, todo.body.completed)}
+        onCheckboxClick={() => onCheckboxClick(todo.id, todo.body.done)}
         onTodoClick={() => Router.push(`/edit?id=${todo.id}`)}
       />
     ))}
