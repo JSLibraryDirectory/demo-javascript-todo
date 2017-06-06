@@ -43,8 +43,8 @@ export default class extends Component {
   }
 
   handleTagsChange = (value) => {
-    const { tags } = this.state
-    const index = tags.indexOf(value)
+    const tags = this.state.tags || []
+    const index = tags ? tags.indexOf(value) : -1
 
     if (index === -1) {
       tags.push(value)
@@ -93,7 +93,7 @@ export default class extends Component {
             />
             <TagPicker
               onClick={this.handleTagsChange}
-              selected={tags}
+              selected={tags || []}
             />
           </div>
           <div className="bottom">
