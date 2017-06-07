@@ -28,29 +28,23 @@ export default class extends Component {
   }
 
   handlePriorityChange = ({ target: { value }}) => {
-    this.setState({ 'priority': parseInt(value) })
+    this.setState({ 'priority': Number(value) })
   }
 
   handleTagsChange = (value) => {
     const { tags } = this.state
     const index = tags.indexOf(value)
 
-    if (index === -1) { // Tag is not in the array
-      tags.push(value)
-    } else {
-      tags.splice(index, 1)
-    }
-
+    index === -1 ? tags.push(value) : tags.splice(index, 1)
     this.setState({ tags })
   }
 
   handleCreateClick = async () => {
-    const date = new Date()
     const { title } = this.state
 
     if (title !== '') {
       try {
-        await createTodo({ ...this.state, createdAt: date.toISOString() })
+        await createTodo({ ...this.state, createdAt: new Date().toISOString() })
         Router.push('/')
       } catch (err) {
         console.log(err)

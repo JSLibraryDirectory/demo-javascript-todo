@@ -43,19 +43,14 @@ export default class extends Component {
   }
 
   handlePriorityChange = ({ target: { value }}) => {
-    this.setState({ 'priority': parseInt(value) })
+    this.setState({ 'priority': Number(value) })
   }
 
   handleTagsChange = (value) => {
-    const tags = this.state.tags || []
-    const index = tags ? tags.indexOf(value) : -1
-
-    if (index === -1) {
-      tags.push(value)
-    } else {
-      tags.splice(index, 1)
-    }
-
+    const { tags = [] } = this.state
+    const index = tags.indexOf(value)
+    
+    index === -1 ? tags.push(value) : tags.splice(index, 1)
     this.setState({ tags })
   }
 
@@ -73,7 +68,7 @@ export default class extends Component {
   }
 
   render() {
-    const { title, description, priority, tags, done } = this.state
+    const { title, description, priority, tags = [], done } = this.state
     return (
       <Page heading="Edit Task">
         <div className="wrap">
@@ -100,7 +95,7 @@ export default class extends Component {
             />
             <TagPicker
               onClick={this.handleTagsChange}
-              selected={tags || []}
+              selected={tags}
             />
           </div>
           <div className="bottom">

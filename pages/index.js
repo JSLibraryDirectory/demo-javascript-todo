@@ -4,7 +4,7 @@ import Page from '../components/page'
 import Header from '../components/header'
 import TodoList from '../components/todolist'
 
-import { observeTodos } from '../lib/observe-todos'
+import observeTodos from '../lib/observe-todos'
 import updateTodo from '../lib/update-todo'
 
 export default class extends Component {
@@ -26,12 +26,13 @@ export default class extends Component {
   handleCheckboxClick = async (id, done) => {
     this.setState(prev => ({
       todos: prev.todos.map(todo => {
-        todo.body = todo.id === id
-          ? { ...todo.body, done: !done }
-          : todo.body
+        if (todo.id === id) {
+          todo.body.done = !todo.body.done
+        }
         return todo
       })
     }))
+
     await updateTodo(id, { done: !done })
   }
 
