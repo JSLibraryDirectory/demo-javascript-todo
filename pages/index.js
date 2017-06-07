@@ -7,7 +7,7 @@ import TodoList from '../components/todolist'
 import observeTodos from '../lib/observe-todos'
 import updateTodo from '../lib/update-todo'
 
-export default class extends Component {
+export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -16,11 +16,24 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    this.todos = observeTodos(todos => this.setState({ todos }))
+    try {
+      this.todos = observeTodos({}, todos => this.setState({ todos }))
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   componentWillUnmount() {
     this.todos.unsubscribe()
+  }
+
+  handleQueryUpdate = query => {
+    this.todos.unsubscribe()
+    try {
+      this.todos = observeTodos(query, todos => this.setState({ todos }))
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   handleCheckboxClick = async (id, done) => {
@@ -38,9 +51,8 @@ export default class extends Component {
 
   render() {
     const { todos } = this.state
-
     return (
-      <Page heading="Tasks" canSort>
+      <Page heading="Tasks" onQueryUpdate={this.handleQueryUpdate}>
         <TodoList todos={todos} onCheckboxClick={this.handleCheckboxClick} />
       </Page>
     )

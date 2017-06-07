@@ -1,41 +1,49 @@
 import React, { Component } from 'react'
+
 import Check from './iconCheck'
 import Arrow from './iconArrow'
+
+const SORT = ['createdAt', 'done', 'priority', 'title']
+
 
 export default class extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isOpen: false,
-      selectedItem: 'Date Created'
     }
-    this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick() {
+  handleClick = () => {
     this.setState(prev => ({ isOpen: !prev.isOpen }))
   }
 
   render() {
-    const { list, children, activeItem } = this.props
-    const { isOpen, selectedItem } = this.state
+    const { children, selected, onClick } = this.props
+    const { isOpen } = this.state
     return (
       <div className="wrapper">
         <button onClick={this.handleClick}>
           Sort By
-          <span className="button__selected">
-            {selectedItem}
+          <span className="button-selected">
+            {selected}
           </span>
-          <span className={`arrow ${isOpen && 'arrow--open'}`}>
+          <span className={`arrow ${isOpen && 'arrow-open'}`}>
             <Arrow />
           </span>
         </button>
         {isOpen &&
           <ul>
-            <li className={'selected'}><Check /> Date Created</li>
-            <li>Priority</li>
-            <li>Completed</li>
-            <li>Title</li>
+            {SORT.map(val =>
+              <li
+                key={val}
+                className={selected === val && 'selected'}
+                onClick={() => onClick(val)}
+              >
+                {selected === val && <Check />}
+                {val}
+              </li>
+            )}
           </ul>}
         <style jsx>
           {`
@@ -53,15 +61,16 @@ export default class extends Component {
             color: #444444;
           }
           
-          .button__selected {
+          .button-selected {
             font-weight: 400;
             margin: 0 10px;
-            min-width: 90px;
+            min-width: 100px;
             display: inline-block;
             transition: color .2s ease;
+            text-transform: capitalize;
           }
 
-          button:hover .button__selected {
+          button:hover .button-selected {
             color: #CF4647;
           }
 
@@ -76,7 +85,7 @@ export default class extends Component {
             transform: rotate(-90deg);
           }
 
-          .arrow--open {
+          .arrow-open {
             transform: rotate(90deg);
           }
 
@@ -99,6 +108,7 @@ export default class extends Component {
             font-size: 1.5rem;
             opacity: 0.5;
             transition: opacity .15s ease;
+            text-transform: capitalize;            
           }
 
           li:hover {

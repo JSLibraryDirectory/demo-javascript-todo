@@ -34,7 +34,6 @@ export default class extends Component {
   handleTagsChange = (value) => {
     const { tags } = this.state
     const index = tags.indexOf(value)
-
     index === -1 ? tags.push(value) : tags.splice(index, 1)
     this.setState({ tags })
   }

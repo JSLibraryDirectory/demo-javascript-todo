@@ -1,13 +1,18 @@
 import Badge from './badge'
 import Check from './iconCheck'
 
-export default () => (
+const STATUS = ['all', 'completed', 'incompleted']
+
+export default ({ selected, onClick }) => (
   <div>
     <h2>Status</h2>
     <ul>
-      <li><Check /> All</li>
-      <li>Completed</li>
-      <li>Incompleted</li>
+      {STATUS.map(status => 
+        <li key={status} onClick={() => onClick(status)}>
+          {status}
+          {status === selected && <Check />}
+        </li>  
+      )}
     </ul>
 
     <style jsx>
@@ -25,6 +30,7 @@ export default () => (
           cursor: pointer;
           font-size: 1.5rem;
           transition: color .2s ease;
+          text-transform: capitalize;    
         }
 
         li:hover {

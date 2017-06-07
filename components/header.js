@@ -1,14 +1,12 @@
 import SortBy from './sortby'
 
-export default ({ heading, canSort }) => (
+export default ({ heading, sort, onSortClick }) => (
   <header>
     <div className="wrap">
       <h1>{heading}</h1>
-      {canSort &&
-        <div className="right">
-          <SortBy />
-        </div>
-      }
+      <div className="right">
+        <SortBy selected={sort} onClick={onSortClick} />
+      </div>
     </div>
     <style jsx>
       {`

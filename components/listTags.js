@@ -1,23 +1,18 @@
 import Badge from './badge'
 import Check from './iconCheck'
 
-export default () => (
+const TAGS = ['home', 'work', 'other']
+
+export default ({ selected, onClick }) => (
   <div>
     <h2>Tags</h2>
     <ul>
-      <li className="home">
-        Home
-        <Check />
-        <Badge type="home">3</Badge>
-      </li>
-      <li className="work">
-        Work
-        <Badge type="work">21</Badge>
-      </li>
-      <li className="other">
-        Other
-        <Badge type="other">3</Badge>
-      </li>
+      {TAGS.map(tag => 
+        <li key={tag} className={tag} onClick={() => onClick(tag)}>
+          {tag}
+          {selected.includes(tag) && <Check />}
+        </li>
+      )}
     </ul>
 
     <style jsx>
@@ -35,7 +30,8 @@ export default () => (
           cursor: pointer;
           font-size: 1.5rem;
           position: relative;  
-          transition: color .2s ease;        
+          transition: color .2s ease;    
+          text-transform: capitalize;    
         }
 
         li:hover {

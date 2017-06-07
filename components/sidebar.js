@@ -4,7 +4,7 @@ import Link from './link'
 import ListTags from './listTags'
 import ListStatuses from './listStatuses'
 
-export default () => (
+export default ({ tags, onTagClick, status, onStatusClick }) => (
   <div className="sidebar">
     <header>
       <NextLink href="/">
@@ -17,8 +17,8 @@ export default () => (
       <Link className="button" href="/new" prefetch>
         Create Task
       </Link>
-      <ListTags />
-      <ListStatuses />
+      <ListTags selected={tags} onClick={onTagClick} />
+      <ListStatuses selected={status} onClick={onStatusClick} />
     </div>
 
     <style jsx>
