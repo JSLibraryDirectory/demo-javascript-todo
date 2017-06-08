@@ -18,13 +18,18 @@ export default class extends Component {
     this.setState(prev => ({ isOpen: !prev.isOpen }))
   }
 
+  handleItemClick(val) {
+    this.handleClick()
+    this.props.onClick(val)
+  }
+
   render() {
     const { children, selected, onClick } = this.props
     const { isOpen } = this.state
     return (
       <div className="wrapper">
         <button onClick={this.handleClick}>
-          Sort By
+          Order By
           <span className="button-selected">
             {selected}
           </span>
@@ -38,7 +43,7 @@ export default class extends Component {
               <li
                 key={val}
                 className={selected === val && 'selected'}
-                onClick={() => onClick(val)}
+                onClick={() => this.handleItemClick(val)}
               >
                 {selected === val && <Check />}
                 {val}
