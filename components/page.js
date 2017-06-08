@@ -77,6 +77,8 @@ export default class Page extends Component {
           }
 
           .scrollable {
+            position: relative;
+            flex: 1 1 auto;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
           }
