@@ -42,12 +42,15 @@ export default class extends Component {
     const { title } = this.state
 
     if (title !== '') {
-      try {
-        await createTodo({ ...this.state, createdAt: new Date().toISOString() })
-        Router.push('/')
-      } catch (err) {
-        console.log(err)
-      }
+      alert('Title can\'t be blank')
+      return
+    }
+
+    try {
+      await createTodo({ ...this.state, createdAt: new Date().toISOString() })
+      Router.push('/')
+    } catch (err) {
+      console.log(err)
     }
   }
 
