@@ -24,8 +24,8 @@ export default ({ tags, onTagClick, status, onStatusClick }) => (
     <style jsx>
       {`
       .sidebar {
-        height: 100%;
-        border-right: 1px solid #EEEBF3;   
+        height: 100vh;
+        border-right: 1px solid #EEEBF3;
       }
 
       header {

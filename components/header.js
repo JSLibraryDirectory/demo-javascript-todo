@@ -15,6 +15,7 @@ export default ({ heading, sort, onSortClick }) => (
         display: flex;
         align-items: center;
         border-bottom: 1px solid #EEEBF3;
+        flex: 0 0 80px;
       }
       .wrap {
         width: 100%;

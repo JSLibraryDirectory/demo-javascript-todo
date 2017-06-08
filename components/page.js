@@ -54,7 +54,9 @@ export default class Page extends Component {
             sort={sort}
             onSortClick={this.handleSortClick}
           />
-          {children}
+          <div className="scrollable">
+            {children}
+          </div>
         </main>
         <style jsx>
           {`
@@ -70,6 +72,13 @@ export default class Page extends Component {
 
           main {
             flex: 3;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .scrollable {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
           }
         `}
         </style>
