@@ -32,7 +32,7 @@ export default class extends Component {
     const { id } = this.props
     const { title } = this.state
 
-    if (title !== '') {
+    if (title === '') {
       alert('Title can\'t be blank')
       return
     }

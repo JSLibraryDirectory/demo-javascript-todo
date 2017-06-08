@@ -41,7 +41,7 @@ export default class extends Component {
   handleCreateClick = async () => {
     const { title } = this.state
 
-    if (title !== '') {
+    if (title === '') {
       alert('Title can\'t be blank')
       return
     }
