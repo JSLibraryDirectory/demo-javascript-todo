@@ -16,4 +16,4 @@ RapiDO and Rapid.io JavaScript SDK is owned and maintained by [Rapid.io](http://
 
 
 ## License
-Rapid.io JavaScript SDK is released under the MIT license. See [LICENSE](/LICENSE.md) for details.
+Rapid.io JavaScript SDK is released under the MIT license. See [LICENSE](/LICENSE) for details.
