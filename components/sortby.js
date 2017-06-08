@@ -103,6 +103,7 @@ export default class extends Component {
             padding: 24px 22px;
             position: absolute;
             top: 52px;
+            z-index: 1;
           }
 
           li {
