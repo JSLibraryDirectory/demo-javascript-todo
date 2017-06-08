@@ -18,34 +18,30 @@ const Tag = ({ children, selected, margin, onClick }) => (
         transition: background-color .2s ease, color .2s ease, border .2s ease;
       }
       button.home.selected {
-        background-color: #3F91EB;
-        border: 1px solid #3F91EB;        
-        color: white;
+        background-color: #D3E9FD;
+        border: 1px solid #D3E9FD;        
+        color: #3F91EB;
       }
       button.home:hover {
-        border-color: #3F91EB;
         color: #3F91EB;
       }
       button.work.selected {
-        background-color: #CF4647;
-        border: 1px solid #CF4647;                
-        color: white;
+        background-color: #FED8DA;
+        border: 1px solid #FED8DA;                
+        color: #CF4647;
       }
       button.work:hover{
-        border-color: #CF4647;
         color: #CF4647;
       }
       button.other.selected {
-        background-color: #85D95B;
-        border: 1px solid #85D95B;
-        color: white;
+        background-color: #C9EFB5;
+        border: 1px solid #C9EFB5;
+        color: #6CB136;
       }
       button.other:hover{
-        border-color: #85D95B;
-        color: #85D95B;
+        color: #6CB136;
       }
       button.selected:hover {
-        color: #fff;
         cursor: default;
       }
     `}
