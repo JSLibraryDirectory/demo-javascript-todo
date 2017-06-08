@@ -59,13 +59,8 @@ export default ({ selected, onClick }) => (
           background-color: #3F91EB;
         }
 
-        li :global(.badge) {
-          float: right;
-        }
-
         li :global(.icon) {
-          position: absolute;
-          right: 60px;
+          float: right;
         }
 
         h2 {
