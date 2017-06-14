@@ -3,7 +3,7 @@
 </p>
 <hr/>
 
-# Example Next.js web app
+# Example Web App in Next.js
 
 ## How to use
 
@@ -29,5 +29,9 @@ Install it and run
 
 ## The idea behind the example
 
-RapiDO is a sample to-do list web app based on [Next.js](https://github.com/zeit/next.js) and [Rapid.io](https://www.rapid.io) real-time database. The app is supposed to showcase usage of [Rapid.io JavaScript SDK](https://github.com/Rapid-SDK/javascript).
+RapiDO is a sample to-do list web app based on [Next.js](https://github.com/zeit/next.js) and [Rapid.io](https://www.rapid.io) real-time database. The app is supposed to showcase usage of [Rapid.io JavaScript SDK](https://github.com/Rapid-SDK/javascript). You can open the app in multiple tabs or windows and start creating/updating your to-dos. All the changes are promoted immediately across all clients. Also, try to turn off/on your network connection, do some changes and see how Rapid.io handles all of them.
+
+<p align="center">
+  <img alt="logo" src="/static/app-screenshot.png" />
+</p>
 
