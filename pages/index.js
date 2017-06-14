@@ -18,8 +18,10 @@ export default class Index extends Component {
   }
 
   componentDidMount() {
+    const defaultQuery = { sort: 'createdAt' }
+
     try {
-      this.todos = observeTodos({}, todos => this.setState({ todos, loading: false }))
+      this.todos = observeTodos(defaultQuery, todos => this.setState({ todos, loading: false }))
     } catch (err) {
       console.log(err)
     }
@@ -53,6 +55,7 @@ export default class Index extends Component {
 
   render() {
     const { todos, loading } = this.state
+
     return (
       <Page heading="Tasks" onQueryUpdate={this.handleQueryUpdate}>
         { loading
