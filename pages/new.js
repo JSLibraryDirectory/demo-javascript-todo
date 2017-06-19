@@ -27,11 +27,11 @@ export default class extends Component {
     this.setState({ [target.name]: value })
   }
 
-  handlePriorityChange = ({ target: { value }}) => {
-    this.setState({ 'priority': Number(value) })
+  handlePriorityChange = ({ target: { value } }) => {
+    this.setState({ priority: Number(value) })
   }
 
-  handleTagsChange = (value) => {
+  handleTagsChange = value => {
     const { tags } = this.state
     const index = tags.indexOf(value)
     index === -1 ? tags.push(value) : tags.splice(index, 1)
@@ -42,7 +42,7 @@ export default class extends Component {
     const { title } = this.state
 
     if (title === '') {
-      alert('Title can\'t be blank')
+      alert("Title can't be blank")
       return
     }
 
@@ -80,15 +80,16 @@ export default class extends Component {
               options={[0, 1, 2]}
               margin="0 120px 0 0"
             />
-            <TagPicker
-              onClick={this.handleTagsChange}
-              selected={tags}
-            />
+            <TagPicker onClick={this.handleTagsChange} selected={tags} />
           </div>
           <div className="bottom">
             <div className="completed">
               <span>Completed</span>
-              <Checkbox name="done" onChange={this.handleInputChange} checked={done} />
+              <Checkbox
+                name="done"
+                onChange={this.handleInputChange}
+                checked={done}
+              />
             </div>
             <div>
               <Link href="/" inverted margin="0 30px 0 0">
@@ -102,32 +103,32 @@ export default class extends Component {
         </div>
         <style jsx>
           {`
-          .wrap {
-            margin-top: 40px;
-            margin-left: 60px;
-            margin-right: 130px;
-          }
-          .column {
-            display: flex;
-            align-items: center;
-          }
-          .bottom {
-            margin-top: 60px;
-            padding: 60px 0;
-            border-top: 1px solid #EEEBF3;
-            display: flex;
-            justify-content: space-between;
-          }
-          .completed {
-            display: flex;
-            align-items: flex-start;
-            padding-top: 15px;
-          }
-          .completed span {
-            font-size: 1.8rem;
-            margin-right: 10px;
-          }
-        `}
+            .wrap {
+              margin-top: 40px;
+              margin-left: 60px;
+              margin-right: 130px;
+            }
+            .column {
+              display: flex;
+              align-items: center;
+            }
+            .bottom {
+              margin-top: 60px;
+              padding: 60px 0;
+              border-top: 1px solid #EEEBF3;
+              display: flex;
+              justify-content: space-between;
+            }
+            .completed {
+              display: flex;
+              align-items: flex-start;
+              padding-top: 15px;
+            }
+            .completed span {
+              font-size: 1.8rem;
+              margin-right: 10px;
+            }
+          `}
         </style>
       </Page>
     )

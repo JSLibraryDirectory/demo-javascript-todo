@@ -4,15 +4,19 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prettier": "prettier --single-quote --no-semi --trailing-comma es5 --write '**/*.js'"
   },
   "engines": {
     "node": "7.6.0"
   },
   "dependencies": {
     "next": "^2.4.3",
-    "rapid-io": "^0.3.1",
+    "rapid-io": "^0.3.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.4.4"
   }
 }

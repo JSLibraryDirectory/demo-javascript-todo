@@ -1,17 +1,17 @@
 const OPTIONS = ['Low', 'Medium', 'High']
 
-export default ({ onChange, options, value, margin }) => (
+export default ({ onChange, options, value, margin }) =>
   <select
     name="priority"
     onChange={onChange}
     style={{ margin }}
     defaultValue={value || 0}
   >
-    {options.map(val => (
+    {options.map(val =>
       <option key={val} value={val}>
         {`${OPTIONS[val]} priority`}
       </option>
-    ))}
+    )}
     <style jsx>{`
       select {
         border: 1px solid #EEEBF3;
@@ -25,8 +25,7 @@ export default ({ onChange, options, value, margin }) => (
         outline: none;
         transition: border .2s ease;
       }
-
-      select:hover{
+      select:hover {
         border-color: #c4c3c9;
       }
       select:after {
@@ -34,4 +33,3 @@ export default ({ onChange, options, value, margin }) => (
       }
     `}</style>
   </select>
-)

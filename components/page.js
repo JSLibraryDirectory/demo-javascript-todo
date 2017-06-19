@@ -10,7 +10,7 @@ export default class Page extends Component {
     this.state = {
       sort: 'createdAt',
       tags: [],
-      status: 'all'
+      status: 'all',
     }
   }
 
@@ -46,7 +46,12 @@ export default class Page extends Component {
       <div className="page">
         <Meta />
         <aside>
-          <Sidebar tags={tags} onTagClick={this.handleTagClick} status={status} onStatusClick={this.handleStatusClick} />
+          <Sidebar
+            tags={tags}
+            onTagClick={this.handleTagClick}
+            status={status}
+            onStatusClick={this.handleStatusClick}
+          />
         </aside>
         <main>
           <Header
@@ -60,29 +65,26 @@ export default class Page extends Component {
         </main>
         <style jsx>
           {`
-          .page {
-            display: flex;
-            height: 100vh;
-          }
-
-          aside {
-            flex: 1;
-            max-width: 400px;
-          }
-
-          main {
-            flex: 3;
-            display: flex;
-            flex-direction: column;
-          }
-
-          .scrollable {
-            position: relative;
-            flex: 1 1 auto;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-          }
-        `}
+            .page {
+              display: flex;
+              height: 100vh;
+            }
+            aside {
+              flex: 1;
+              max-width: 400px;
+            }
+            main {
+              flex: 3;
+              display: flex;
+              flex-direction: column;
+            }
+            .scrollable {
+              position: relative;
+              flex: 1 1 auto;
+              overflow-y: auto;
+              -webkit-overflow-scrolling: touch;
+            }
+          `}
         </style>
       </div>
     )

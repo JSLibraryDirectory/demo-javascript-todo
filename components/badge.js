@@ -1,4 +1,4 @@
-export default ({ children, type, margin }) => (
+export default ({ children, type, margin }) =>
   <span className={`badge ${type}`} style={{ margin }}>
     {children}
     <style jsx>
@@ -13,16 +13,14 @@ export default ({ children, type, margin }) => (
           min-width: 40px;
           text-align: center;
         }
-        .badge.other{
+        .badge.other {
           background-color: #C9EFB5;
           color: #6CB136;
         }
-
         .badge.work {
           background-color: #FED8DA;
           color: #CF4647;
         }
-
         .badge.home {
           background-color: #D3E9FD;
           color: #3F91EB;
@@ -30,4 +28,3 @@ export default ({ children, type, margin }) => (
       `}
     </style>
   </span>
-)

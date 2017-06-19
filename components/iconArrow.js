@@ -1,4 +1,4 @@
-export default () => (
+export default () =>
   <svg
     width="15px"
     height="15px"
@@ -13,4 +13,3 @@ export default () => (
       />
     </g>
   </svg>
-)

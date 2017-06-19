@@ -7,7 +7,7 @@ export default ({
   onClick,
   inverted = false,
   margin = 0,
-  prefetch = false
+  prefetch = false,
 }) => {
   if (type === 'button') {
     return (
@@ -35,23 +35,20 @@ export default ({
             outline: none;
             line-height: 1;
           }
-
           .button:hover {
             color: #fff;
             background: #FA3435;
             border-color: #FA3435;
           }
-
           .button.inverted {
-            background: white;              
+            background: white;
             color: #CF4647;
             border: 1px solid #CF4647;
           }
-          
           .button.inverted:hover {
             background: #cdccd2;
             border-color: #cdccd2;
-            color: white;                        
+            color: white;
           }
         `}</style>
       </button>
@@ -79,23 +76,20 @@ export default ({
             outline: none;
             line-height: 1;
           }
-
           .button:hover {
             color: #fff;
             background: #FA3435;
             border-color: #FA3435;
           }
-
           .button.inverted {
-            background: white;              
+            background: white;
             color: #CF4647;
             border: 1px solid #CF4647;
           }
-          
           .button.inverted:hover {
             background: #cdccd2;
             border-color: #cdccd2;
-            color: white;                        
+            color: white;
           }
         `}</style>
       </a>

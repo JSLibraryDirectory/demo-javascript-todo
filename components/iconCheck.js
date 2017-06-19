@@ -1,4 +1,4 @@
-export default () => (
+export default () =>
   <span className="icon">
     <svg
       width="19px"
@@ -16,4 +16,3 @@ export default () => (
       </g>
     </svg>
   </span>
-)

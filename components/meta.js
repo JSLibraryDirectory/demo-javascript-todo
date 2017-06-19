@@ -1,18 +1,37 @@
 import Head from 'next/head'
 
-const metaDescription = 'Rapid.io is a flexible realtime database accessible from a client-side code. Go realtime using rich queries, auto indexing and flexible security. Download our SDKs for iOS, Android and JavaScript on www.rapid.io. Start for free.'
-export default () => (
+const metaDescription =
+  'Rapid.io is a flexible realtime database accessible from a client-side code. Go realtime using rich queries, auto indexing and flexible security. Download our SDKs for iOS, Android and JavaScript on www.rapid.io. Start for free.'
+export default () =>
   <div>
     <Head>
       <title>RapiDO - Demo App of Rapid.io</title>
       <meta name="description" content={metaDescription} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta charSet="utf-8" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/static/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/static/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/static/favicon-16x16.png"
+      />
       <link rel="manifest" href="/static/manifest.json" />
-      <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#1d1b2e" />
+      <link
+        rel="mask-icon"
+        href="/static/safari-pinned-tab.svg"
+        color="#1d1b2e"
+      />
       <meta name="theme-color" content="#ffffff" />
       <meta name="robots" content="index, follow" />
       <meta property="og:title" content="Rapid.io Demo App" />
@@ -49,4 +68,3 @@ export default () => (
       }
     `}</style>
   </div>
-)

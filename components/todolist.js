@@ -16,7 +16,6 @@ export default ({ todos, onCheckboxClick, onTodoClick }) => {
             justify-content: center;
             align-items: center;
           }
-
           p {
             font-size: 2.2rem;
             padding: 0 30px;
@@ -28,20 +27,20 @@ export default ({ todos, onCheckboxClick, onTodoClick }) => {
 
   return (
     <div>
-      {todos.map(todo => (
+      {todos.map(todo =>
         <Todo
           key={todo.id}
           {...todo.body}
           onCheckboxClick={() => onCheckboxClick(todo.id, todo.body.done)}
           onTodoClick={() => Router.push(`/edit?id=${todo.id}`)}
         />
-      ))}
+      )}
       <style jsx>{`
         div {
           margin-left: 60px;
           margin-right: 130px;
         }
-    `}</style>
+      `}</style>
     </div>
   )
 }

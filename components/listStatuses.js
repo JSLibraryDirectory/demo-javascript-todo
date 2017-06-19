@@ -3,15 +3,15 @@ import Check from './iconCheck'
 
 const STATUS = ['all', 'completed', 'incompleted']
 
-export default ({ selected, onClick }) => (
+export default ({ selected, onClick }) =>
   <div>
     <h2>Status</h2>
     <ul>
-      {STATUS.map(status => 
+      {STATUS.map(status =>
         <li key={status} onClick={() => onClick(status)}>
           {status}
           {status === selected && <Check />}
-        </li>  
+        </li>
       )}
     </ul>
 
@@ -22,26 +22,22 @@ export default ({ selected, onClick }) => (
           margin: 0;
           padding: 0;
         }
-
         li {
-          padding: 0 0 0 30px; 
+          padding: 0 0 0 30px;
           margin: 5px 0;
           position: relative;
           cursor: pointer;
           font-size: 1.5rem;
           transition: color .2s ease;
-          text-transform: capitalize;    
+          text-transform: capitalize;
         }
-
         li:hover {
           color: #CF4647;
         }
-
         li > :global(.icon) {
           position: absolute;
           left: 0;
         }
-
         h2 {
           font-size: 1.6rem;
           font-weight: 600;
@@ -50,4 +46,3 @@ export default ({ selected, onClick }) => (
       `}
     </style>
   </div>
-)

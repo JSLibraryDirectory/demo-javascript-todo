@@ -13,7 +13,7 @@ export default class Index extends Component {
     super(props)
     this.state = {
       loading: true,
-      todos: []
+      todos: [],
     }
   }
 
@@ -21,7 +21,9 @@ export default class Index extends Component {
     const defaultQuery = { sort: 'createdAt' }
 
     try {
-      this.todos = observeTodos(defaultQuery, todos => this.setState({ todos, loading: false }))
+      this.todos = observeTodos(defaultQuery, todos =>
+        this.setState({ todos, loading: false })
+      )
     } catch (err) {
       console.log(err)
     }
@@ -34,7 +36,9 @@ export default class Index extends Component {
   handleQueryUpdate = query => {
     this.todos.unsubscribe()
     try {
-      this.todos = observeTodos(query, todos => this.setState({ todos, loading: false }))
+      this.todos = observeTodos(query, todos =>
+        this.setState({ todos, loading: false })
+      )
     } catch (err) {
       console.log(err)
     }
@@ -47,7 +51,7 @@ export default class Index extends Component {
           todo.body.done = !todo.body.done
         }
         return todo
-      })
+      }),
     }))
 
     await updateTodo(id, { done: !done })
@@ -58,10 +62,12 @@ export default class Index extends Component {
 
     return (
       <Page heading="Tasks" onQueryUpdate={this.handleQueryUpdate}>
-        { loading
+        {loading
           ? <Loader />
-          : <TodoList todos={todos} onCheckboxClick={this.handleCheckboxClick} />
-        }
+          : <TodoList
+              todos={todos}
+              onCheckboxClick={this.handleCheckboxClick}
+            />}
       </Page>
     )
   }
