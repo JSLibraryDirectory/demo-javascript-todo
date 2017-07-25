@@ -11,12 +11,12 @@
     "node": "7.6.0"
   },
   "dependencies": {
-    "next": "^2.4.3",
-    "rapid-io": "^0.3.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "next": "^2.4.7",
+    "rapid-io": "^0.4.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "prettier": "^1.4.4"
+    "prettier": "^1.5.3"
   }
 }
